@@ -8,7 +8,7 @@
 
 <h3>Add your comment:</h3>
 
-<%= form_for Comment.new do |f| %>
+<%= form_for Comment.new, :remote => true do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
