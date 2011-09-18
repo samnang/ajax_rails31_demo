@@ -1,0 +1,15 @@
+<% title "Comments" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+  </tr>
+  <% for comment in @comments %>
+    <tr>
+      <td><%= comment.name %></td>
+      <td><%= comment.content %></td>
+    </tr>
+  <% end %>
+</table>
+
