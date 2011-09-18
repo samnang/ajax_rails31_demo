@@ -1,15 +1,22 @@
-<% title "Comments" %>
+<% title "Comments for Ajax in Rails 3.1" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Content</th>
-  </tr>
-  <% for comment in @comments %>
-    <tr>
-      <td><%= comment.name %></td>
-      <td><%= comment.content %></td>
-    </tr>
-  <% end %>
-</table>
+<div id="comments_count"><%= comments_count %></div>
 
+<div id="comments">
+  <%= render @comments %>
+</div>
+
+<h3>Add your comment:</h3>
+
+<%= form_for Comment.new do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :content, "Comment" %><br />
+    <%= f.text_area :content, :rows => '12', :cols => 35 %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
