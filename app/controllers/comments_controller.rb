@@ -12,4 +12,12 @@ class CommentsController < ApplicationController
 
     respond_with @comment, :location => comments_url
   end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+
+    @comment.destroy
+
+    respond_with @comment, :location => comments_url
+  end
 end

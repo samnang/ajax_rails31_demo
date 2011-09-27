@@ -1,5 +1,6 @@
-<div class="comment">
+<div id=<%= dom_id(comment) %> class="comment">
   <strong><%= comment.name %></strong>
   <em>on <%= comment.created_at.strftime('%b %d, %Y at %I:%M %p') %></em>
+  <%= link_to "Remove", comment, :method => :delete, :remote => true %>
   <%= simple_format comment.content %>
 </div>
